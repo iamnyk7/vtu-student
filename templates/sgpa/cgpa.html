@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block active1 %}active{% endblock active1 %}
+{% block title %}CGPA{% endblock title %}
+
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 ">WELCOME TO HYPE-CGPA CALCULATOR </h1>
+    <p class="lead">FOR 2018 CBCS SCHEME</p>
+  </div>
+</div>
+{% if res %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congrats!</strong> Your cgpa is {{res}}
+  <br>
+   <a href="https://www.youtube.com/watch?v=5V6JnwCgxKc">watch our vlog</a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% else %}
+<div class="container ">
+
+    <h1 class="display-4 ">Please enter your sgpa</h1>
+    <p class="lead">leave as it is if semester is not completed</p>
+<form action="/cgpacalc" method="post">
+ {% csrf_token %}
+<div class="form-group">
+    <label for="sem1">SEM 1</label>
+    <input type="number" class="form-control" id="sem1" step="0.01"  placeholder="SEM 1 SGPA" name="sem1" value=0>
+  </div>
+<div class="form-group">
+    <label for="sem2">SEM 2</label>
+    <input type="number" class="form-control" id="sem2" step="0.01"  placeholder="SEM 2 SGPA" name="sem2" value=0>
+  </div>
+<div class="form-group">
+    <label for="sem3">SEM 3</label>
+    <input type="number" class="form-control" id="sem3" step="0.01"  placeholder="SEM 3 SGPA" name="sem3" value=0>
+  </div>
+<div class="form-group">
+    <label for="sem4">SEM 4</label>
+    <input type="number" class="form-control" id="sem4" step="0.01"  placeholder="SEM 4 SGPA" name="sem4" value=0>
+  </div>
+<div class="form-group">
+    <label for="sem5">SEM 5</label>
+    <input type="number" class="form-control" id="sem5" step="0.01"  placeholder="SEM 5 SGPA" name="sem5" value=0>
+  </div>
+  <div class="form-group">
+    <label for="sem6">SEM 6</label>
+    <input type="number" class="form-control" id="sem6" step="0.01"  placeholder="SEM 6 SGPA" name="sem6" value=0>
+  </div>
+  <div class="form-group">
+    <label for="sem7">SEM 7</label>
+    <input type="number" class="form-control" id="sem7" step="0.01"  placeholder="SEM 7 SGPA" name="sem7" value=0>
+  </div>
+  <div class="form-group">
+    <label for="sem8">SEM 8</label>
+    <input type="number" class="form-control" id="sem8" step="0.01"  placeholder="SEM 8 SGPA" name="sem8" value=0>
+  </div>
+  <div class="text-center">
+	<button type="submit" class="btn btn-primary">Calculate</button>
+</div>
+ </form>
+ </div>
+ {% endif %}
+{% endblock body %}
