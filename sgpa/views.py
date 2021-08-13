@@ -93,7 +93,8 @@ def calc(request):
             points=grade(round(ixt[0]),3)+grade(round(ixt[1]),4)+grade(round(ixt[2]),3)+grade(round(ixt[3]),3)+grade(round(ixt[4]),3)+grade(round(ixt[5]),3)+grade(round(ixt[6]),2)+grade(round(ixt[7]),2)+grade(round(ixt[8]),1)
 
             sgpa=round(points/24,2)
-            context={'sgpa':sgpa}
+            per=(sgpa-0.75)*10
+            context={'sgpa':sgpa,'per':per}
             return render(request,'sgpa/home.html',context)
 
         else:
@@ -109,8 +110,8 @@ def calc(request):
             print(ixt)
             points=grade(round(ixt[0]),4)+grade(round(ixt[1]),4)+grade(round(ixt[2]),4)+grade(round(ixt[3]),3)+grade(round(ixt[4]),3)+grade(round(ixt[5]),2)+grade(round(ixt[6]),2)+grade(round(ixt[7]),2)
 
-            sgpa=round(points/24,2)
-            context={'sgpa':sgpa}
+            per=(sgpa-0.75)*10
+            context={'sgpa':sgpa,'per':per}
             return render(request,'sgpa/home.html',context)
 
 def grade(marks,sub):
@@ -159,6 +160,7 @@ def cgpacalc(request):
         tot_cgpa+=total['s'+str(i)]
     
     res=round(points/tot_cgpa,2)
-    context={'res':res}
+    per=(res-0.75)*10
+    context={'res':res,'per':per}
 
     return render(request,'sgpa/cgpa.html',context)
