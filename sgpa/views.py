@@ -100,17 +100,31 @@ def calc(request):
         else:
             avg=0
             ixt=[]
-            for i in range(1,9):
-                avg+=(int(request.POST.get('sub'+str(i))))*0.83
-            avg=round(avg/9)
+            for i in range(1,10):
+                mark_con=round(((int(request.POST.get('sub'+str(i))))*0.83),2)
+                # print(mark_con)
+                avg+=mark_con
+            
+            # print(avg)
+            avg=round(avg,2)
+            # print(avg)
+            avg=round(avg/9,2)
+
+            # print(avg)
+            
             
             for i in range(1,9):
-                ixt.append(int(request.POST.get('subi'+str(i)))*1.25+avg)
+                iam=((int(request.POST.get('subi'+str(i))))*1.25)
+                ixt.append((iam+avg))
             
             print(ixt)
-            points=grade(round(ixt[0]),4)+grade(round(ixt[1]),4)+grade(round(ixt[2]),4)+grade(round(ixt[3]),3)+grade(round(ixt[4]),3)+grade(round(ixt[5]),2)+grade(round(ixt[6]),2)+grade(round(ixt[7]),2)
+           
+            points=grade((round(ixt[0])),4)+grade((round(ixt[1])),4)+grade((round(ixt[2])),4)+grade((round(ixt[3])),3)+grade((round(ixt[4])),3)+grade((round(ixt[5])),2)+grade((round(ixt[6])),2)+grade((round(ixt[7])),2)
+            print(points)
             sgpa=round(points/24,2)
-            per=(sgpa-0.75)*10
+
+
+            per=round(((sgpa-0.75)*10),2)
             context={'sgpa':sgpa,'per':per}
             return render(request,'sgpa/home.html',context)
 
