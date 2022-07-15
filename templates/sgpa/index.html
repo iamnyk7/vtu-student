@@ -1,43 +1,18 @@
-{% extends 'base.html' %}
-{% block title %}SGPA{% endblock title %}
-{% block body %}
+{% extends 'base.html' %} {% block title %}SGPA{% endblock title %} {% block
+body %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">WELCOME TO SGPA CALCULATOR </h1>
-    <p class="lead">SGPA WILL BE CALCULATED BASED ON NEW 50:50 RULE</p>
+    <h1 class="display-4">WELCOME TO SGPA CALCULATOR</h1>
   </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col mb-2 d-flex justify-content-around">
-        <a type="button" class="btn btn-lg btn-success mb-2" href="sgpa/cses">CSE-6</a>
-        <a type="button" class="btn btn-lg btn-success mb-2" href="sgpa/csef">CSE-4</a>
-        </div>
+  <div class="row">
+    <div class="col mb-2 d-flex justify-content-around">
+      <a type="button" class="btn btn-lg btn-success mb-2" href="sgpa/new"
+        >21 SCHEME</a
+      >
     </div>
-    <div class="row">
-        <div class="col mb-2 d-flex justify-content-around ">
-        <a type="button" class="btn btn-lg btn-success mb-2" href="ece6">ECE-6</a>
-        <a type="button" class="btn btn-lg btn-success mb-2" href="ece4">ECE-4</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col mb-2 d-flex justify-content-around ">
-        <a type="button" class="btn btn-lg btn-success mb-2" href="ise6">ISE-6</a>
-        <a type="button" class="btn btn-lg btn-success mb-2" href="ise4">ISE-4</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col mb-2 d-flex justify-content-around ">
-        <a type="button" class="btn btn-lg btn-success mb-2" href="me6">ME-6</a>
-        <a type="button" class="btn btn-lg btn-success mb-2" href="me4">ME-4</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col mb-2 text-center">
-        <a type="button" class="btn btn-lg btn-success mb-2" href="eee">ECE-6</a>
-        </div>
-    </div>
-    
-</div>
+  </div>
 
-{% endblock body %}
+  {% endblock body %}
+</div>
