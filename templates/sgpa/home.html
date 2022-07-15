@@ -1,9 +1,10 @@
-{% extends 'base.html' %} {% block title %}{{name}}{% endblock title %} {% block
-body %}
+{% extends 'base.html' %} {% block title %}{{name}}{% endblock title %}
+
+<br />
+{% block body %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">SGPA CALCULATOR</h1>
-    <p class="lead">SGPA WILL BE CALCULATED BASED ON NEW 50:50 RULE</p>
   </div>
 </div>
 
@@ -13,7 +14,9 @@ body %}
   <br />
   Equivalent percentage is {{per}}
   <br />
-  <a href="https://www.youtube.com/watch?v=5V6JnwCgxKc">watch our vlog</a>
+  <a href="https://www.instagram.com/accounts/login/?next=/hypebalaga.in/"
+    >Follow us</a
+  >
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -48,3 +51,4 @@ body %}
   </form>
 </div>
 {% endif %} {% endblock body %}
+
