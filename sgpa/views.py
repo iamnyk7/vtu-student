@@ -7,8 +7,8 @@ def index(request):
     return render(request,'sgpa/index.html')
 
 def direct(request,slug):
-    if slug=="cses":
-        context={'name':'CSE6','subject':subject_cse3}
+    if slug=="new":
+        context={'name':'FIRST YEAR','subject':subject_cse3}
         return render(request,'sgpa/home.html',context)
     else:
         return render(request,'sgpa/index.html')
@@ -20,11 +20,11 @@ def calc(request):
 
         
         for i in range(1,10):
-            ixt.append(int(request.POST.get('subi'+str(i))))
+            ixt.append(int(request.POST.get('sub'+str(i))))
 
 
         print(ixt)
-        points=grade(round(ixt[1]),3)+grade(round(ixt[2]),3)+grade(round(ixt[3]),3)+grade(round(ixt[4]),3)+grade(round(ixt[5]),3)+grade(round(ixt[6]),1)+grade(round(ixt[7]),1)+grade(round(ixt[8]),2)+grade(round(ixt[9]),1)
+        points=grade(round(ixt[0]),3)+grade(round(ixt[1]),3)+grade(round(ixt[2]),3)+grade(round(ixt[3]),3)+grade(round(ixt[4]),3)+grade(round(ixt[5]),1)+grade(round(ixt[6]),1)+grade(round(ixt[7]),2)+grade(round(ixt[8]),1)
         print(points)
         sgpa=round(points/20,2)
         per=(sgpa-0.75)*10
